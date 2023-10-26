@@ -2,8 +2,10 @@
   "name": "tl-zyl-test",
   "version": "1.0.0",
   "description": "zyl test",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "start": "node index.js",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -12,6 +14,8 @@
   "author": "1182897232@qq.com",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.8.8",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
   }
