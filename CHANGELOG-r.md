@@ -1,5 +1,12 @@
 
 
+## [0.3.0](https://github.com/omamzhang/version-log/compare/v0.2.1...v0.3.0) (2023-11-07)
+
+
+### Features
+
+* rt配置更新 ([44bbe44](https://github.com/omamzhang/version-log/commit/44bbe4423022cd5c60b487e36a5df24313cc12c5))
+
 ## [0.2.1](https://github.com/omamzhang/version-log/compare/v0.2.0...v0.2.1) (2023-11-07)
 
 
