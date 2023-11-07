@@ -1,27 +1,46 @@
 {
   "name": "tl-zyl-test",
-  "version": "1.0.0",
+  "version": null,
   "description": "zyl test",
   "main": "dist/index.js",
   "scripts": {
     "start": "node index.js",
+    "r": "./bin/release.sh",
     "v": "node src/version.ts",
     "l": "node src/log.ts",
+    "x": "npm run r ",
+    "log": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "rl": "./bin/release-log.sh",
+    "release": "./bin/release.sh",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && npm run changeissueurl",
+    "changeissueurl": "replace 'https://github.com/myproject/issues/' 'https://redmine.example.com/' CHANGELOG.md",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "commitlint --from=HEAD~1",
     "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "bin": {
     "my-command": "./bin/my-command.sh"
   },
   "author": "1182897232@qq.com",
-  "license": "ISC",
   "devDependencies": {
+    "@commitlint/config-conventional": "^18.1.0",
     "@types/node": "^20.8.8",
-    "typescript": "^5.2.2",
-    "husky": "^8.0.0"
+    "conventional-changelog": "^5.1.0",
+    "conventional-changelog-cli": "^4.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "semver": "^7.5.4"
+    "semver": "^7.5.4",
+    "standard-version": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {}
   }
 }
