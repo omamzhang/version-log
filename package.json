@@ -8,7 +8,7 @@
     "r": "./bin/release.sh",
     "v": "node src/version.ts",
     "l": "node src/log.ts",
-    "x": "npm run r ",
+    "x": "npm run r",
     "log": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "rl": "./bin/release-log.sh",
     "rt": "release-it",
