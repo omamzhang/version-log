@@ -11,10 +11,12 @@
     "x": "npm run r ",
     "log": "npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "rl": "./bin/release-log.sh",
+    "rt": "release-it",
     "release": "./bin/release.sh",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && npm run changeissueurl",
     "changeissueurl": "replace 'https://github.com/myproject/issues/' 'https://redmine.example.com/' CHANGELOG.md",
     "build": "tsc",
+    "commit": "cz",
     "test": "commitlint --from=HEAD~1",
     "prepare": "husky install"
   },
@@ -29,11 +31,13 @@
   "author": "1182897232@qq.com",
   "devDependencies": {
     "@commitlint/config-conventional": "^18.1.0",
+    "@release-it/conventional-changelog": "^7.0.2",
     "@types/node": "^20.8.8",
     "conventional-changelog": "^5.1.0",
     "conventional-changelog-cli": "^4.1.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.0",
+    "release-it": "^16.2.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
@@ -41,6 +45,8 @@
     "standard-version": "^9.5.0"
   },
   "config": {
-    "commitizen": {}
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
