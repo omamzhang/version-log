@@ -1,6 +1,6 @@
 {
   "name": "tl-zyl-test",
-  "version": null,
+  "version": "0.0.2-0",
   "description": "zyl test",
   "main": "dist/index.js",
   "scripts": {
