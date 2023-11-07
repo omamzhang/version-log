@@ -48,3 +48,12 @@ npm install -g conventional-changelog-cli
 # -s 参数表示将生成的日志追加到现有的日志文件中
 conventional-changelog -p angular -i CHANGELOG.md -s
 ```
+
+## 目标
+ - 版本号自增  package.json version / remote version
+  - 
+ - 版本日志记录生成 git commit (log规范) / git tag / remote tag / release
+  - keep a change log / commitizen 询问的方式
+  - commit lint / husks
+  - tag / changelog.md
+
