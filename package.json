@@ -1,5 +1,5 @@
 {
-  "name": "@ysf/tl-vlog-test",
+  "name": "tl-zyl-test",
   "version": "0.3.1-beta.0",
   "description": "zyl test",
   "main": "dist/index.js",
