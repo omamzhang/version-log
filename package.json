@@ -1,12 +1,12 @@
 {
   "name": "@ysf/tl-vlog-test",
-  "version": "0.3.0",
+  "version": "0.3.1-beta.0",
   "description": "zyl test",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "npm run build && wain prepublish --business=qiyu",
-		"afterpublish": "wain afterpublish",
-		"postpublish": "wain arouseserve",
+    "afterpublish": "wain afterpublish",
+    "postpublish": "wain arouseserve",
     "start": "node index.js",
     "r": "./bin/release.sh",
     "v": "node src/version.ts",
