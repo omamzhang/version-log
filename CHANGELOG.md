@@ -1,4 +1,4 @@
-## [0.3.1-beta.0](https://github.com/omamzhang/version-log/compare/v0.2.1...v0.3.1-beta.0) (2023-11-08)
+## [0.3.1-beta.1](https://github.com/omamzhang/version-log/compare/v0.2.1...v0.3.1-beta.1) (2023-11-08)
 
 
 ### Bug Fixes
@@ -10,6 +10,7 @@
 
 * lint样式完善 ([6f6b5be](https://github.com/omamzhang/version-log/commit/6f6b5be14096157ee805b07af097ab4531bea253))
 * rt配置更新 ([44bbe44](https://github.com/omamzhang/version-log/commit/44bbe4423022cd5c60b487e36a5df24313cc12c5))
+* wain测试 ([c54f27a](https://github.com/omamzhang/version-log/commit/c54f27a82c1208f254910264148042ac8fbb8592))
 
 
 
