@@ -1,4 +1,4 @@
-const { execSync } = require('child_process');
+// const { execSync } = require('child_process');
 const fs = require('fs');
 
 // 获取当前日期和时间作为标签
@@ -8,18 +8,18 @@ const getTag = () => {
 };
 
 // 生成日志文件名
-const getLogFileName = (tag) => {
+const getLogFileName = (tag:string) => {
   return `log_${tag}.txt`;
 };
 
 // 生成日志信息
-const generateLog = (tag, commitMessage) => {
+const generateLog = (tag:string, commitMessage:string) => {
   const logEntry = `Tag: ${tag}\nLog message: ${commitMessage}\n\n`;
   return logEntry;
 };
 
 // 执行 Git 命令
-const executeGitCommand = (command) => {
+const executeGitCommand = (command:string) => {
   try {
     const output = execSync(command, { encoding: 'utf8' });
     return output.trim();

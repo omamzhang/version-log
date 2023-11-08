@@ -2,7 +2,7 @@ const semver = require('semver');
 let { version } = require('../package.json');
 const { execSync } = require('child_process');
 
-const execSyncCmd = (cmd) => {
+const execSyncCmd = (cmd:string) => {
     const rst =  execSync(cmd);
     return rst.toString("utf8").trim();
 };
@@ -21,35 +21,35 @@ console.log(parsed);
 
 // execSyncCmd();
 
-const createVersionDev = (v) => {
+const createVersionDev = (v:string) => {
     const versionDev = semver.inc(v, 'prerelease', 'alpha');
     console.log(versionDev); // 1.2.3-beta.2
     return versionDev;
 }
 
-const createVersionTest = (v) => {
+const createVersionTest = (v:string) => {
     const versionTest = semver.inc(v, 'prerelease', 'beta');
     console.log(versionTest); // 1.2.3-beta.2
     return versionTest;
 }
-const createVersionTestHotFix = (v) => {
+const createVersionTestHotFix = (v:string) => {
     const versionTestHotfix = semver.inc(v, 'prerelease', 'beta');
     console.log(versionTestHotfix); // 1.2.3-beta.2
     return versionTestHotfix;
 }
 
-const createVersionOnline = (v) => {
+const createVersionOnline = (v:string) => {
     const versionOnline = semver.inc(v, 'patch');
     console.log(versionOnline); // 1.2.3-beta.2
     return versionOnline;
 }
-const createVersionHotfix = (v) => {
+const createVersionHotfix = (v:string) => {
     const versionHotfix = semver.inc(v, 'patch');
     console.log(versionHotfix); // 1.2.3-beta.2
     return versionHotfix;
 }
 
-const  createVersionNew = (v, vType='minor') => {
+const  createVersionNew = (v:string, vType='minor') => {
     const versionNew = semver.inc(v, `pre${vType}`, 'alpha');
     console.log(versionNew); // 1.2.3-beta.2
     return versionNew;
