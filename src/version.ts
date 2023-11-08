@@ -18,8 +18,49 @@ console.log(parsed);
 
 // console.log(versionNext);
 
+/*  校验分支规范：
+    本地开发需求feature/x.xx.x  -> major.minor.patch-alpha.[x+1]
+    hotfix/x.xx.x-test  -> major.minor.patch+1-beta.[x+1]
+    version/x.xx.x  -> major.minor.patch-beta.[x+1]
+    master_gray  =>  major.minor.patch-rc.[x+1]
+    master  =>  [major+1].[minor+1].[patch+1]
+ */
+enum SEMVER_PREFIX {
+    INNER = 'alpha',
+    OPEN = 'beta',
+    CANDIDATE = 'rc',
+    OFFICAL = ''
+}
+enum BRANCHNAME_PREFIX {
+    feature = 'feature',
+    dev = 'dev',
+    hotfix = 'hotfix',
+    version ='version',
+    master ='master'
+}
 
-// execSyncCmd();
+const PrereleasePrefixMap = {
+    feature: 'alpha',
+    dev: 'alpha',
+    hotfix: 'beta',
+    version:'beta',
+    master:''
+};
+
+const branchName = execSyncCmd('git branch --show-current') ?? 'feature';
+const branchNamePrefix = [];
+console.log('branchName', (branchName.split('/'))[0]);
+
+const thePrereleasePrefix = PrereleasePrefixMap[branchName as keyof typeof PrereleasePrefixMap];
+const createVersion = (v:string) => {
+    if(thePrereleasePrefix) {
+        const theVersion = semver.inc(v, 'prerelease', thePrereleasePrefix);
+        console.log(theVersion);
+    } else {
+        let versionType = ''; // 交互式选择版本号
+        const theVersion = semver.inc(v, versionType);
+    }
+};
 
 const createVersionDev = (v:string) => {
     const versionDev = semver.inc(v, 'prerelease', 'alpha');

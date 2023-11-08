@@ -51,9 +51,34 @@ conventional-changelog -p angular -i CHANGELOG.md -s
 
 ## 目标
  - 版本号自增  package.json version / remote version
-  - 
+  - 环境
+  - 分支规范
  - 版本日志记录生成 git commit (log规范) / git tag / remote tag / release
   - keep a change log / commitizen 询问的方式
   - commit lint / husks
   - tag / changelog.md
+
+
+## 版本号自增
+
+ **Semver preRelease 值**         | **使用场景**
+--------------------------|--------------------------------------------------------------------------
+ alpha                    | 内部测试版本，用于在开发过程中进行内部测试和反馈。不建议在生产环境中使用。
+ beta                     | 公测版本，用于向外部用户发布，收集反馈并进行最后的修改。不建议在生产环境中使用。
+ rc \(release candidate\) | 候选发布版本，用于进行最后的功能验证和性能测试。不建议在生产环境中使用。
+ "" \(空字符串\)              | 正式版本，经过充分测试，可以用于生产环境。
+ "1\.2\.3\-pre\.1"        | 预发行版本，表示当前是下一个主版本的预发行版本，例如：1\.2\.3\-pre\.1 表示下一个主版本将是 1\.2\.3。
+ "1\.2\.3\-alpha\.1"      | alpha 版本，表示当前是一个内部测试版本，例如：1\.2\.3\-alpha\.1 表示当前是 1\.2\.x 系列的 alpha 版本。。
+ "1\.2\.3\-beta\.1"       | beta 版本，表示当前是一个公测版本，例如：1\.2\.3\-beta\.1 表示当前是 1\.2\.x 系列的 beta 版本。
+
+
+ **交互式CLI依赖库** | **功能介绍**                                              | **示例地址**                                    
+---------------|-------------------------------------------------------|---------------------------------------------
+ Inquirer\.js  | 提供交互式命令行用户界面，支持多种提问类型、回答存储、校验和过滤等功能。                  | https://github\.com/SBoudrias/Inquirer\.js  
+ inquirer      | 基于enquirer\.js的fork版本，继承了enquirer\.js的所有功能，并进行了改进和优化。 | https://github\.com/terkelg/inquirer        
+ Commander\.js | 用于构建用户友好的命令行界面，支持自动生成帮助和使用说明等功能。                      | https://github\.com/tj/commander\.js        
+ CLI\-table3   | 用于在命令行中创建表格，支持自定义样式和布局等功能。                            | https://www\.npmjs\.com/package/cli\-table3 
+ Chalk         | 用于在控制台中输出带颜色和样式的文字，支持跨平台使用。                           | https://www\.npmjs\.com/package/chalk       
+ Ora           | 用于在命令行中显示加载动画，支持自定义样式和配置等功能。                          | https://www\.npmjs\.com/package/ora         
+
 
